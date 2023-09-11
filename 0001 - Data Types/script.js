@@ -1,0 +1,32 @@
+"use strict";
+
+const aInt = 10;
+const aFloat = 10.58;
+const aBigInt = BigInt("12345678901234567890123456789");
+const aString = "JavaScript";
+const aBoolean = true;
+const aNull = null;
+const aUndefined = undefined;
+const aArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const aObject = { firstName: "JavaScript", birthYear: 1995 };
+const aSymbol1 = Symbol("JavaScript");
+const aSymbol2 = Symbol("JavaScript");
+
+console.log(`aInt: ${aInt} \nTypeof: ${typeof aInt}\n`);
+console.log(`aFloat: ${aFloat} \nTypeof: ${typeof aFloat}\n`);
+console.log(`aBigInt: ${aBigInt} \nTypeof: ${typeof aBigInt}\n`);
+console.log(`aString: ${aString} \nTypeof: ${typeof aString}\n`);
+console.log(`aBoolean: ${aBoolean} \nTypeof: ${typeof aBoolean}\n`);
+console.log(`aNull: ${aNull} \nTypeof: ${typeof aNull}\n`);
+console.log(`aUndefined: ${aUndefined} \nTypeof: ${typeof aUndefined}\n`);
+console.log(`aArray: ${aArray} \nTypeof: ${typeof aArray}\n`);
+console.log("aObject: ");
+console.log(aObject);
+console.log(`Typeof: ${typeof aObject}\n`);
+console.log("aSymbol1: ");
+console.log(aSymbol1);
+console.log(`Typeof: ${typeof aSymbol}\n`);
+console.log("aSymbol2: ");
+console.log(aSymbol2);
+console.log(`Typeof: ${typeof aSymbol2}\n`);
+console.log(`aSymbol1 === aSymbol2: ${aSymbol1 === aSymbol2}`);
