@@ -1,0 +1,17 @@
+body {
+    height: 100vh;
+    display: inline;
+    background: linear-gradient(to top left, #28b478, #7dd56f);
+}
+
+h1 {
+    font-family: sans-serif;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+#div-form {
+    text-align: center;
+}
