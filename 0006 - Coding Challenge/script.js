@@ -1,7 +1,7 @@
 "use strict";
 
 const form = document.querySelector("form");
-const divForm = document.querySelector("div-form");
+const divResult = document.querySelector("#div-result");
 
 const calculateBmi = (weight, height) => {
     const isDataValid =
@@ -19,14 +19,32 @@ const calculateBmi = (weight, height) => {
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
+    let textResult = "";
 
     try {
         const weight = Number(form.weight.value);
         const height = Number(form.height.value);
 
         const bmi = calculateBmi(weight, height);
-        console.log(bmi);
+
+        if (bmi === -1) {
+            throw new Error("Invalid data. Try again!");
+        }
+
+        textResult = `Your BMI is ${bmi.toFixed(2)}`;
     } catch (error) {
-        console.error(error.toString());
+        textResult = error.toString();
+    } finally {
+        const h2 = document.querySelector("h2");
+
+        if (h2 !== undefined && h2 !== null) {
+            h2.textContent = textResult;
+        } else {
+            const h2 = document.createElement("h2");
+            const h2Text = document.createTextNode(textResult);
+
+            h2.appendChild(h2Text);
+            divResult.appendChild(h2);
+        }
     }
 });

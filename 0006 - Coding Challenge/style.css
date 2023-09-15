@@ -1,6 +1,5 @@
 body {
     height: 100vh;
-    display: inline;
     background: linear-gradient(to top left, #28b478, #7dd56f);
 }
 
@@ -13,5 +12,9 @@ h1 {
 }
 
 #div-form {
+    text-align: center;
+}
+
+#div-result {
     text-align: center;
 }
