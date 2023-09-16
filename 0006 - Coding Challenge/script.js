@@ -35,15 +35,18 @@ form.addEventListener("submit", (event) => {
     } catch (error) {
         textResult = error.toString();
     } finally {
-        const h2 = document.querySelector("h2");
+        const result = document.querySelector("#result");
+        const isResultExist = result !== undefined && result !== null;
 
-        if (h2 !== undefined && h2 !== null) {
-            h2.textContent = textResult;
+        if (isResultExist) {
+            result.textContent = textResult;
         } else {
             const h2 = document.createElement("h2");
             const h2Text = document.createTextNode(textResult);
 
+            h2.setAttribute("id", "result");
             h2.appendChild(h2Text);
+
             divResult.appendChild(h2);
         }
     }
