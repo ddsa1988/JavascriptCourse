@@ -3,19 +3,47 @@
 import promptSync from "prompt-sync";
 
 const prompt = promptSync();
+const pointsTeamA = [];
+const pointsTeamB = [];
+const MAX_POINTS = 3;
 
-const print = (delay, msg) => {
-    const isDataValid =
-        Number.isInteger(delay) && delay >= 0 && typeof msg === "string";
-    if (isDataValid) {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(console.log(msg));
-            }, delay);
-        });
-    } else {
-        throw new Error("Invalid function parameters");
+let counter = 0;
+
+while (counter < MAX_POINTS) {
+    try {
+        const score = Number(
+            prompt(console.log(`Type the team A ${counter + 1}º score: `))
+        );
+
+        if (!(Number.isInteger(score) && score > 0)) {
+            throw new Error("Invalid score.");
+        }
+
+        pointsTeamA.push(score);
+        counter++;
+    } catch (error) {
+        console.error(error.toString());
     }
-};
+}
 
-print(1000, "Test");
+counter = 0;
+
+while (counter < MAX_POINTS) {
+    try {
+        const score = Number(
+            prompt(console.log(`Type the team B ${counter + 1}º score: `))
+        );
+
+        if (!(Number.isInteger(score) && score > 0)) {
+            throw new Error("Invalid score.");
+        }
+
+        pointsTeamB.push(score);
+        counter++;
+    } catch (error) {
+        console.error(error.toString());
+    }
+}
+
+console.log(pointsTeamA);
+console.log(pointsTeamB);
